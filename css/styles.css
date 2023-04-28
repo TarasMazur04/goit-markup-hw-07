@@ -49,10 +49,7 @@ body {
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 img {
   display: block;
@@ -203,26 +200,31 @@ img {
 /*---------------- hero -----------------*/
 
 .hero {
-  padding: 188px 0;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 112px 0;
+  margin: 0 auto;
   text-align: center;
-  max-width: 1440px;
-  height: 600px;
   background-color: var(--dark);
-  background-image: var(--hero-background), url(../images/hero-bg.jpg);
+  background-image: var(--hero-background), url(../images/hero-bg.mob.jpg);
   background-position: center;
   background-size: cover;
 }
 
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: var(--hero-background), url(../images/hero-bg.mob@2x.jpg);
+  }
+}
+
 .hero-title {
-  max-width: 496px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--white-background);
 }
@@ -247,11 +249,7 @@ img {
 /* ----------------- benefits-----------*/
 
 .benefits-list {
-  /* display: flex;
-  flex-wrap: wrap;
-  align-items: center; */
   /* gap: 24px; */
-  gap: 72px;
 }
 
 .benefits-wrap {
@@ -272,12 +270,14 @@ img {
 
 .benefits-subtitle {
   margin-bottom: 8px;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.1;
 }
 .benefits-item {
-  width: 264px;
+  margin-bottom: 72px;
+  /* width: 264px; */
 }
 
 .benefits-text {
@@ -900,6 +900,19 @@ img {
   .container {
     width: 428px;
   }
+
+  .hero {
+    background-image: var(--hero-background), url(../images/hero-bg.tab.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: var(--hero-background),
+        url(../images/hero-bg.tab@2x.jpg);
+    }
+  }
 }
 
 /* ------------- max-width: 767px --------- */
@@ -956,6 +969,50 @@ img {
   .container {
     width: 768px;
   }
+
+  /* ------------- HERO ------------- */
+
+  .hero {
+    background-image: var(--hero-background), url(../images/hero-bg.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: var(--hero-background), url(../images/hero-bg@2x.jpg);
+    }
+  }
+
+  .hero-title {
+    max-width: 496px;
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
+
+  /* ------------- HERO ------------- */
+
+  /* ------------- BENEFITS --------- */
+
+  .benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .benefits-item {
+    margin: 0;
+    flex-basis: calc(100% / 2 - 24px);
+  }
+
+  .benefits-subtitle {
+    text-align: left;
+  }
+
+  /* ------------- BENEFITS --------- */
 
   /* ------------ TEAM ---------- */
 
@@ -1014,12 +1071,68 @@ img {
 
 /* --------------- min-width: 768px -------- */
 
+@media screen and (max-width: 1157px) {
+  .service {
+    display: none;
+  }
+}
+
 /* --------------  min-width: 1158px--------- */
 
 @media screen and (min-width: 1158px) {
   .container {
     width: 1158px;
   }
+
+  .section {
+    padding: 120px 0;
+  }
+
+  /* ------------- HERO ------------- */
+
+  .hero {
+    max-width: 1440px;
+    padding: 188px 0;
+  }
+  .hero-title {
+    margin-bottom: 48px;
+  }
+
+  /* ------------- HERO ------------- */
+
+  /* ------------- BENEFITS --------- */
+
+  .benefits-list {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .benefits-item {
+    flex-basis: calc((100% - 72px) / 4);
+    /* width: 264px; */
+  }
+
+  .benefits-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .benefits-text {
+    font-weight: 400;
+  }
+
+  .benefits-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    margin-bottom: 8px;
+    background-color: var(--light);
+    border-radius: 4px;
+  }
+
+  /* ------------- BENEFITS --------- */
 
   /* ----------- TEAM -------------- */
 
