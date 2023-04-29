@@ -205,6 +205,20 @@ img {
 }
 
 .menu-close-btn:hover,
+.mmenu-close-btn:focus {
+  background-color: var(--pressed-state);
+}
+
+.mod-icon {
+  transition: fill var(--transition-dur-and-func);
+}
+
+.menu-close-btn:hover .mod-icon,
+.menu-close-btn:focus .mod-icon {
+  fill: #ffffff;
+}
+
+.menu-close-btn:hover,
 .menu-close-btn:focus {
   background-color: var(--pressed-state);
 }
@@ -279,6 +293,11 @@ img {
   align-items: center;
   justify-content: center;
   transition: background-color var(--transition-dur-and-func);
+}
+
+.menu-soc-link:hover,
+.menu-soc-link:focus {
+  background-color: var(--pressed-state);
 }
 
 .mob-menu.is-hidden {
