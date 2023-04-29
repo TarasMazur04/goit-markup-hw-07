@@ -397,14 +397,10 @@ address {
 }
 .benefits-item:not(:last-child) {
   margin-bottom: 72px;
-  /* width: 264px; */
 }
 
 .benefits-text {
   font-weight: 500;
-  /* min-width: 264px; */
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 /* ----------------- benefits-----------*/
 /* -----------service-------------- */
@@ -1216,8 +1212,11 @@ address {
   }
 
   .benefits-item {
-    margin: 0;
+    /* margin: 0; */
     flex-basis: calc(100% / 2 - 24px);
+  }
+  .benefits-item:not(:last-child) {
+    margin-bottom: 0;
   }
 
   .benefits-subtitle {
@@ -1336,7 +1335,6 @@ address {
 
   .benefits-item {
     flex-basis: calc((100% - 72px) / 4);
-    /* width: 264px; */
   }
 
   .benefits-subtitle {
