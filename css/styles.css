@@ -115,26 +115,13 @@ img {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-navigation {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-.header-menu {
-  display: flex;
-  align-items: center;
-}
-
-.menu-item:not(:last-child) {
-  margin-right: 40px;
-}
-
-.header-information-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
 }
 
 .logo-web {
@@ -156,46 +143,157 @@ img {
   color: var(--dark);
 }
 
-.header-link {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  transition: color var(--transition-dur-and-func);
+.menu-open-btn {
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  margin: 0;
 }
 
-.menu-item {
-  position: relative;
+.icon-mob-mnu {
+  display: block;
+  width: 32px;
+
+  stroke: #2e2f42;
+  height: 22px;
 }
 
-.menu-link {
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--dark);
+.header-menu {
+  display: none;
 }
 
-.current::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -25px;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
+.header-information-list {
+  display: none;
+}
+
+/* ---------------- MOB-MENU------------- */
+
+.mob-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  padding: 24px 24px 40px 40px;
+
+  background-color: var(--white-background);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  transition: opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
+}
+.menu-close-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
+
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color var(--transition-dur-and-func);
+}
+
+.menu-close-btn:hover,
+.menu-close-btn:focus {
   background-color: var(--pressed-state);
 }
 
-.menu-link:hover,
-.menu-link:focus,
-.contact-link:hover,
-.contact-link:focus {
+.mod-icon:hover,
+.mod-icon:focus {
+  fill: #ffffff;
+}
+
+.mob-menu-list {
+  margin-bottom: 40px;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mob-menu-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+  transition: color var(--transition-dur-and-func);
+}
+
+.mob-menu-link:hover,
+.mob-menu-link:focus {
   color: var(--pressed-state);
 }
 
-.header-information {
-  margin-left: auto;
-
-  font-style: normal;
+.mob-menu-information-list {
+  margin-bottom: 48px;
 }
+.mob-menu-information-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mob-menu-link-phone {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--primary-brand);
+}
+
+.mob-menu-adress {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  transition: color var(--transition-dur-and-func);
+}
+
+.mob-menu-adress:hover,
+.mob-menu-adress:focus {
+  color: var(--pressed-state);
+}
+
+.menu-soc-list {
+  display: flex;
+  gap: 56px;
+}
+
+.menu-soc-item {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--primary-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-dur-and-func);
+}
+
+.mob-menu.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---------------- MOB-MENU------------- */
+
 /*------------------ HEADER -------------*/
 /*---------------- hero -----------------*/
 
@@ -247,10 +345,6 @@ img {
 }
 /*---------------- hero -----------------*/
 /* ----------------- benefits-----------*/
-
-.benefits-list {
-  /* gap: 24px; */
-}
 
 .benefits-wrap {
   display: flex;
@@ -380,9 +474,6 @@ img {
 }
 /* -------------------Our Team---------------- */
 /* ------------------CUSTOMERS----------- */
-
-.section-customers {
-}
 
 .customers-title {
   margin-bottom: 72px;
@@ -694,9 +785,13 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 408px;
-  min-height: 576px;
-  padding: 72px 24px 24px 24px;
+  width: 95%;
+  height: 95%;
+  max-height: 524px;
+  overflow: scroll;
+
+  padding: 72px 16px 24px 16px;
+
   margin: 0 auto;
   background-color: var(--modal-background);
   border-radius: 4px;
@@ -913,6 +1008,13 @@ img {
         url(../images/hero-bg.tab@2x.jpg);
     }
   }
+
+  .modal {
+    max-width: 392px;
+    width: 100%;
+    max-height: 586px;
+    height: 100%;
+  }
 }
 
 /* ------------- max-width: 767px --------- */
@@ -969,6 +1071,75 @@ img {
   .container {
     width: 768px;
   }
+
+  .modal {
+    max-width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
+  /* ------------ HEADER ------------- */
+
+  .menu-open-btn {
+    display: none;
+  }
+
+  .header-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .header-information-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .information-item {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+  }
+  .header-link {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: color var(--transition-dur-and-func);
+  }
+
+  .menu-item {
+    position: relative;
+  }
+
+  .menu-link {
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+  }
+
+  .current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--pressed-state);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus,
+  .contact-link:hover,
+  .contact-link:focus {
+    color: var(--pressed-state);
+  }
+
+  /* ------------ HEADER ------------- */
 
   /* ------------- HERO ------------- */
 
@@ -1087,6 +1258,18 @@ img {
   .section {
     padding: 120px 0;
   }
+  /* ------------ HEADER ------------- */
+  .header-information-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .information-item {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  /* ------------ HEADER ------------- */
 
   /* ------------- HERO ------------- */
 

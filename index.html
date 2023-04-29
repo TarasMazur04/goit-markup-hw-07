@@ -19,7 +19,8 @@
   </head>
 
   <body>
-    <!-- <header class="header">
+    <!-- ==================== HEADER ================= -->
+    <header class="header">
       <div class="container header-container">
         <nav class="header-navigation">
           <a class="logo-web link" href="./index.html"
@@ -57,9 +58,95 @@
             </li>
           </ul>
         </address>
+        <button type="button" data-menu-open class="menu-open-btn">
+          <svg class="icon-mob-mnu" wight="32px" height="22px">
+            <use href="./images/icons.svg#icon-charm_menu-hamburger-1"></use>
+          </svg>
+        </button>
       </div>
-    </header> -->
+      <!-- ==================== HEADER ================= -->
+      <!-- ============== MOB-MENU=============== -->
+      <div class="mob-menu is-hidden" data-menu>
+        <div class="mob-menu-top">
+          <button type="button" data-menu-close class="menu-close-btn">
+          <svg class="mod-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close-modal"></use>
+          </svg>
+        </button>
+        <nav class="header-navigation">
+            <ul class="mob-menu-list list">
+              <li class="mob-menu-item item">
+                <a
+                  class="mob-menu-link menu-link link current"
+                  href="./index.html"
+                  >Studio</a
+                >
+              </li>
+              <li class="mob-menu-item item">
+                <a class="mob-menu-link menu-link link" href="./portfolio.html"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="mob-menu-item item">
+                <a class="mob-menu-link menu-link link" href="">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+          <div class="mob-menu-information">
+            <ul class="mob-menu-information-list list">
+              <li class="item mob-menu-information-item">
+                <a
+                  class="mob-menu-link-phone contact-link link"
+                  href="tel:+110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+              <li class="item mob-menu-information-item">
+                <a
+                  class="mob-menu-adress contact-link link"
+                  href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="menu-soc-list list">
+              <li class="menu-soc-item item">
+                <a href="" class="menu-soc-link link">
+                  <svg class="team-soc-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="menu-soc-item item">
+                <a href="" class="menu-soc-link link">
+                  <svg class="team-soc-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="menu-soc-item item">
+                <a href="" class="menu-soc-link link">
+                  <svg class="team-soc-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="menu-soc-item item">
+                <a href="" class="menu-soc-link link">
+                  <svg class="team-soc-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ============== MOB-MENU=============== -->
+    </header>
     <main>
+      <!-- ============== HERO ================== -->
       <section class="hero">
         <div class="container hero-container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
@@ -68,6 +155,8 @@
           </button>
         </div>
       </section>
+      <!-- ============== HERO ================== -->
+      <!-- ============== BENEFITS ================== -->
       <section class="benefits section">
         <div class="container container-benefits">
           <h2 hidden class="benefits-title title">Benefits</h2>
@@ -163,6 +252,8 @@
           </ul>
         </div>
       </section>
+      <!-- ============== BENEFITS ================== -->
+      <!-- ============== TEAM ================== -->
       <section class="team section">
         <div class="container container-mini">
           <h2 class="team-title title">Our Team</h2>
@@ -346,6 +437,8 @@
           </ul>
         </div>
       </section>
+      <!-- ============== TEAM ================== -->
+      <!-- ============== CUSTOMERS ================== -->
       <section class="section section-customers">
         <div class="container container-customers container-mini">
           <h2 class="title customers-title">Customers</h2>
@@ -395,7 +488,9 @@
           </ul>
         </div>
       </section>
+      <!-- ============== CUSTOMERS ================== -->
     </main>
+    <!-- ============== FOOTER ================== -->
     <footer class="footer">
       <div class="container">
         <div class="footer-wrap">
@@ -480,6 +575,8 @@
         </div>
       </div>
     </footer>
+    <!-- ============== FOOTER ================== -->
+    <!-- ============== BACKDROP ================== -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-btn" data-modal-close>
@@ -566,6 +663,8 @@
         </form>
       </div>
     </div>
+    <!-- ============== BACKDROP ================== -->
     <script src="./js/modal.js"></script>
+        <script src="./js/menu.js"></script>
   </body>
 </html>
