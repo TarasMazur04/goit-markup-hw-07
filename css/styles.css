@@ -95,6 +95,10 @@ img {
   color: var(--dark);
 }
 
+address {
+  font-style: normal;
+}
+
 .button {
   transition: color var(--transition-dur-and-func),
     background var(--transition-dur-and-func),
@@ -391,7 +395,7 @@ img {
   font-size: 36px;
   line-height: 1.1;
 }
-.benefits-item {
+.benefits-item:not(:last-child) {
   margin-bottom: 72px;
   /* width: 264px; */
 }
@@ -421,8 +425,6 @@ img {
 .team-container {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: flex-start; */
-  /* gap: 24px; */
   gap: 72px;
 }
 
@@ -1018,6 +1020,11 @@ img {
     width: 428px;
   }
 
+  .menu-soc-list {
+    justify-content: flex-start;
+    gap: 56px;
+  }
+
   .hero {
     background-image: var(--hero-background), url(../images/hero-bg.tab.jpg);
   }
@@ -1222,14 +1229,12 @@ img {
   /* ------------ TEAM ---------- */
 
   .team-container {
-    gap: 24px;
+    column-gap: 24px;
+    row-gap: 64px;
   }
 
   .team-item {
     flex-basis: calc((100% - 24px) / 2);
-  }
-  .team-item:nth-child(-n + 2) {
-    margin-bottom: 64px;
   }
 
   /* ------------ TEAM ------------- */
@@ -1316,6 +1321,11 @@ img {
   }
 
   /* ------------- HERO ------------- */
+
+  .service {
+    padding-top: 0;
+    padding-bottom: 120px;
+  }
 
   /* ------------- BENEFITS --------- */
 
