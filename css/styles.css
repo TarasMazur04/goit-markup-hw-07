@@ -287,6 +287,14 @@ img {
   pointer-events: none;
 }
 
+.mob-menu-link.current {
+  color: var(--pressed-state);
+}
+
+.header-link.current {
+  color: var(--pressed-state);
+}
+
 /* ---------------- MOB-MENU------------- */
 
 /*------------------ HEADER -------------*/
